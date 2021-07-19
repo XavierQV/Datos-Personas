@@ -1,0 +1,71 @@
+﻿@model List<trabajoenclase.Models.Dpersona>
+
+@{
+    ViewData["Title"] = "DATOS";
+}
+
+<h1>LISTA DE DATOS</h1>
+
+<p>
+    <a asp-action="Create">CREAR NUEVO</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cedula
+                @*Html.DisplayNameFor(model => model.cedula)*@
+            </th>
+            <th>
+                Nombre
+                @*Html.DisplayNameFor(model => model.nombre)*@
+            </th>
+            <th>
+                Apellido
+                @*Html.DisplayNameFor(model => model.apellido)*@
+            </th>
+            <th>
+                Edad
+                @*Html.DisplayNameFor(model => model.edad)*@
+            </th>
+            <th>
+                Genero
+                @*Html.DisplayNameFor(model => model.genero)*@
+            </th>
+            <th>
+                Direccion
+                @*Html.DisplayNameFor(model => model.direccion)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalles", "Detalles", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,82 @@
+﻿@model trabajoenclase.Models.Dpersona
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear Nuevo</h1>
+
+<h4>Datos Personas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="cedula" class="control-label"></label>
+                        <input asp-for="cedula"required class="form-control" />
+                        <span asp-validation-for="cedula" class="text-danger"></span>
+                    </div>
+
+                </section>
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="nombre" class="control-label"></label>
+                        <input asp-for="nombre"required class="form-control" />
+                        <span asp-validation-for="nombre" class="text-danger"></span>
+                    </div>
+
+                </section>
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="apellido" class="control-label"></label>
+                        <input asp-for="apellido" required class="form-control" />
+                        <span asp-validation-for="apellido" class="text-danger"></span>
+                    </div>
+
+                </section>
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="edad" class="control-label"></label>
+                        <input asp-for="edad"required class="form-control" />
+                        <span asp-validation-for="edad" class="text-danger"></span>
+                    </div>
+
+                </section>
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="genero" class="control-label"></label>
+                        <input asp-for="genero"required class="form-control" />
+                        <span asp-validation-for="genero" class="text-danger"></span>
+                    </div>
+                </section>
+                <section class="col col-6">
+                    <div class="form-group">
+                        <label asp-for="direccion" class="control-label"></label>
+                        <input asp-for="direccion" required class="form-control" />
+                        <span asp-validation-for="direccion" class="text-danger"></span>
+                    </div>
+
+                </section>
+                    <section class="col col-6">
+                        <div class="form-group">
+                            <input type="submit" value="CREAR" class="btn btn-success" />
+                        </div>
+                    </section>
+
+            </div>                                                    
+           
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Salir a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
